@@ -8,7 +8,7 @@ entity conv_PO is
     port (
         clk       : in std_logic;
         reset     : in std_logic;
-        GO        : in std_logic;
+        GO      : in std_logic;
         m00       : in std_logic_vector(7 downto 0);
         m01       : in std_logic_vector(7 downto 0);
         m02       : in std_logic_vector(7 downto 0);
