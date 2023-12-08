@@ -24,14 +24,10 @@ entity conv_PO is
 end entity;
 
 architecture rtl of conv_PO is
-    signal somador1 : std_logic_vector(7 downto 0);
-    signal somador2 : std_logic_vector(7 downto 0);
-    signal somador3 : std_logic_vector(7 downto 0);
-    signal somador4 : std_logic_vector(7 downto 0);
-
-    signal mult1 : std_logic_vector(7 downto 0);
-    signal mult2 : std_logic_vector(7 downto 0);
-
+    signal final : std_logic_vector(7 downto 0) := (others => '0');
+    signal mult1 : std_logic_vector(15 downto 0) := (others => '0');
+    signal mult2 : std_logic_vector(15 downto 0) := (others => '0');
+    
 begin
     process(clk, reset)
     begin
@@ -39,19 +35,15 @@ begin
             result <= (others => '0');
             dadoPrt <= '0';
         elsif rising_edge(clk) then
-            if GO = '1' then
-                mult1 <= m01 * "00000010";
-                mult2 <= m21 * "00000010";--ver essaa linha
-
-                somador1 <= m02+ not m20;
-                somador2 <= m00+ mult1;
-                somador3 <= somador1+ mult2+ not m22;
-                somador4 <= somador2+ somador3;
-                result <= somador4;
+            if GO = '1' then             
+                result <= final;
                 dadoPrt <= '1';
             end if;
         end if;
     end process;
+    mult1 <= m01 * "00000010";
+    mult2 <= ((not m21) + "00000001") * "00000010";
+    final <= m00 + mult1(7 downto 0) + m02 + ((not m20) + "00000001") + mult2(7 downto 0) + ((not m22) + "00000001");
 
 
 

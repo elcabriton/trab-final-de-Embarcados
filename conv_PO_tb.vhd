@@ -22,22 +22,22 @@ architecture tb of conv_PO_tb is
             m22     : in std_logic_vector(7 downto 0);
             dadoPrt : out std_logic;
             result  : out std_logic_vector(7 downto 0)
-          
         );
     end component;
+
     signal clk       :  std_logic:='0';
-    signal reset     :  std_logic:= '0';
-    signal GO      :  std_logic:='0';
+    signal reset     :  std_logic:='1';
+    signal GO        :  std_logic:='0';
     signal m00       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m01       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m02       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m10       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m11       :  std_logic_vector(7 downto 0):= (others => '0');
-    signal m12       :  std_logic_vector(7 downto 0):=(others => '0');
+    signal m12       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m20       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m21       :  std_logic_vector(7 downto 0):= (others => '0');
     signal m22       :  std_logic_vector(7 downto 0):= (others => '0');
-    signal dadoPrt   :  std_logic;
+    signal dadoPrt   :  std_logic := '0';
     signal result    :  std_logic_vector(7 downto 0);
         
 
@@ -61,19 +61,18 @@ begin
     );
 
     clk <= not clk after 5 ns;
-    reset <= '1', '0' after 100 ns;
-    GO <= '1', '0' after 200 ns;
-    m00 <= "00000001", "00000010" after 300 ns;
-    m01 <= "00000011", "00000100" after 400 ns;
-    m02 <= "00000101", "00000110" after 500 ns;
-    m10 <= "00000111", "00001000" after 600 ns;
-    m11 <= "00001001", "00001010" after 700 ns;
-    m12 <= "00001011", "00001100" after 800 ns;
-    m20 <= "00001101", "00001110" after 900 ns;
-    m21 <= "00001111", "00010000" after 1000 ns;
-    m22 <= "00010001", "00010010" after 1100 ns;
+    reset <= '0' after 10 ns;
+    m00 <= "00001111" after 30 ns;
+    m01 <= "00001010" after 30 ns;
+    m02 <= "00001010" after 30 ns;
     
+    m10 <= "00000111" after 30 ns;
+    m11 <= "00001001" after 30 ns;
+    m12 <= "00001011" after 30 ns;
 
-        
-    
+    m20 <= "00001010" after 30 ns;
+    m21 <= "00001010" after 30 ns;
+    m22 <= "00010111" after 30 ns;
+    GO <= '1'  after 40 ns;
+
 end architecture tb;
