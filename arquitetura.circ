@@ -94,63 +94,26 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(240,90)" to="(260,90)"/>
     <wire from="(240,110)" to="(260,110)"/>
     <wire from="(570,150)" to="(570,270)"/>
-    <wire from="(710,300)" to="(710,550)"/>
     <wire from="(260,200)" to="(270,200)"/>
     <wire from="(630,280)" to="(700,280)"/>
     <wire from="(300,100)" to="(380,100)"/>
     <wire from="(300,190)" to="(380,190)"/>
     <wire from="(460,470)" to="(460,520)"/>
     <wire from="(140,110)" to="(210,110)"/>
-    <wire from="(630,550)" to="(710,550)"/>
     <wire from="(140,400)" to="(270,400)"/>
     <wire from="(140,460)" to="(270,460)"/>
     <wire from="(310,530)" to="(380,530)"/>
-    <comp lib="0" loc="(140,110)" name="Pin">
+    <comp lib="3" loc="(520,150)" name="Adder"/>
+    <comp lib="3" loc="(420,520)" name="Adder"/>
+    <comp lib="0" loc="(140,430)" name="Pin">
       <a name="width" val="8"/>
-      <a name="label" val="matriz01"/>
-    </comp>
-    <comp lib="0" loc="(220,200)" name="Constant">
-      <a name="width" val="3"/>
-    </comp>
-    <comp lib="0" loc="(140,140)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="matriz02"/>
+      <a name="label" val="matriz21"/>
     </comp>
     <comp lib="0" loc="(140,460)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="matriz22"/>
     </comp>
-    <comp lib="3" loc="(310,400)" name="Negator"/>
-    <comp lib="4" loc="(730,280)" name="Register"/>
-    <comp lib="3" loc="(530,460)" name="Adder"/>
-    <comp lib="0" loc="(140,80)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="matriz00"/>
-    </comp>
-    <comp lib="0" loc="(140,280)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="matriz11"/>
-    </comp>
-    <comp lib="0" loc="(140,430)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="matriz21"/>
-    </comp>
-    <comp lib="3" loc="(520,150)" name="Adder"/>
-    <comp lib="0" loc="(790,280)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="3" loc="(420,520)" name="Adder"/>
-    <comp lib="0" loc="(140,250)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="matriz10"/>
-    </comp>
-    <comp lib="3" loc="(420,430)" name="Adder"/>
-    <comp lib="0" loc="(630,550)" name="Pin">
-      <a name="tristate" val="false"/>
-    </comp>
+    <comp lib="3" loc="(300,190)" name="Shifter"/>
     <comp lib="0" loc="(210,540)" name="Constant">
       <a name="width" val="3"/>
     </comp>
@@ -159,13 +122,45 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="matriz20"/>
     </comp>
     <comp lib="3" loc="(630,280)" name="Adder"/>
-    <comp lib="3" loc="(300,190)" name="Shifter"/>
+    <comp lib="3" loc="(530,460)" name="Adder"/>
+    <comp lib="0" loc="(140,80)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="matriz00"/>
+    </comp>
+    <comp lib="3" loc="(420,430)" name="Adder"/>
     <comp lib="3" loc="(310,460)" name="Negator"/>
-    <comp lib="3" loc="(300,100)" name="Adder"/>
+    <comp lib="0" loc="(790,280)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(220,200)" name="Constant">
+      <a name="width" val="3"/>
+    </comp>
     <comp lib="3" loc="(310,530)" name="Shifter"/>
     <comp lib="0" loc="(140,310)" name="Pin">
       <a name="width" val="8"/>
       <a name="label" val="matriz12"/>
+    </comp>
+    <comp lib="0" loc="(140,280)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="matriz11"/>
+    </comp>
+    <comp lib="3" loc="(300,100)" name="Adder"/>
+    <comp lib="0" loc="(140,110)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="matriz01"/>
+    </comp>
+    <comp lib="4" loc="(730,280)" name="Register"/>
+    <comp lib="3" loc="(310,400)" name="Negator"/>
+    <comp lib="0" loc="(140,140)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="matriz02"/>
+    </comp>
+    <comp lib="0" loc="(140,250)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="matriz10"/>
     </comp>
   </circuit>
 </project>
